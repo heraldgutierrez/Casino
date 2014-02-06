@@ -1,0 +1,45 @@
+html
+	head
+		meta(name='author' content='Herald Gutierrez')
+		meta(name='description' content='Card matching memory style game')
+		meta(name='keywords' content='HTML, CSS, JavaScript, jQuery, NodeJS, Jade, Socket.io')
+		title Herald Gutierrez - Cards: Match Pairs
+
+		link(rel='stylesheet' type='text/css' href='css/cards.css')
+		link(rel='stylesheet' type='text/css' href='css/video_poker.css')
+		link(rel='stylesheet' type='text/css' href='css/index.css')
+
+
+		script(src='js/jquery-2.0.3.min.js')
+		script(src='/socket.io/socket.io.js')
+		script(src='js/video_poker.js')
+
+	body
+		div#container-game
+			div.container-card
+				div.hold-container
+					span#hold-0.lbl-holding Held
+				div#card-0
+				button.hold(cardNum='0') Hold
+			div.container-card
+				div.hold-container
+					span#hold-1.lbl-holding Held
+				div#card-1
+				button.hold(cardNum='1') Hold
+			div.container-card
+				div.hold-container
+					span#hold-2.lbl-holding	Held
+				div#card-2
+				button.hold(cardNum='2') Hold
+			div.container-card
+				div.hold-container
+					span#hold-3.lbl-holding Held
+				div#card-3
+				button.hold(cardNum='3') Hold
+			div.container-card 
+				div.hold-container
+					span#hold-4.lbl-holding Held
+				div#card-4
+				button.hold(cardNum='4') Hold
+			div.container-card
+				button#deal Draw
