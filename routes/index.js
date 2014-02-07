@@ -19,17 +19,14 @@ module.exports = function(io) {
 		// create a new deck for the ID
 		socket.on('createNewDeck', function(data) { 
 			DECKS[data.id] = new Deck(data.numberDecks); 
-			// DECKS[data.id].shuffle();
+			DECKS[data.id].shuffle();
 		});
 	    
 		// return a new deck to client ID
 	    socket.on('getNewDeck', function(data) { io.sockets.emit('getDeck', DECKS[data.id], data.id); });
 
 	    // shuffle the clients deck
-	    socket.on('shuffleDeck', function(data) {
-	    	console.log('Shuffling Deck for client ' + data.id + '...');
-	    	DECKS[data.id].shuffle();
-	    });
+	    socket.on('shuffleDeck', function(data) { DECKS[data.id].shuffle(); });
 
 	    socket.on('dealCard', function(data) {
 	    	var card = DECKS[data.id].dealCard();
