@@ -11,8 +11,6 @@ $(document).ready(function() {
 	var url = $(location).attr('origin');
 	var socket = io.connect(url);
 
-
-
 	socket.emit('createNewDeck', { numberDecks : 1, id : myID });
 	startGame(socket, myID);
 	setTimeout(turnOverCards, 500);
@@ -26,7 +24,6 @@ $(document).ready(function() {
 
 	// Hold a card
 	$('.hold').click(function() {
-		// $(this).siblings().children().toggleClass('flipped');
 		var cardNum = $(this).attr('cardNum');
 		HOLDS[cardNum] = !HOLDS[cardNum];
 

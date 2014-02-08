@@ -29,12 +29,13 @@ app.configure(function() {
 	app.use(express.static(path.join(__dirname, 'public')));
 });
 
-io.set('log level', 1); // reduce logging
-
-// add websocket support in heroku
+// configure socket.io
 io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
+	io.set('log level', 1); 				// reduce logging
+
+	// web sockets for heroku
+	io.set("transports", ["xhr-polling"]); 
+	io.set("polling duration", 10); 
 });
 
 // development only
